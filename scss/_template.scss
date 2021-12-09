@@ -44,7 +44,7 @@ body{
             font-weight: 400;
             display: inline-block;
             letter-spacing: 0.05em;
-            @include transition(0.25s, ease-in-out);
+            @include transition(0.5s, ease-in-out);
         }
         span{
             display: inline-block;
@@ -55,12 +55,12 @@ body{
             font-size: 12px;
             line-height: 22px;
             letter-spacing: 0.2em;
-            @include transition(0.25s, ease-in-out);
+            @include transition(0.5s, ease-in-out);
         }
         //Arrow
         &:before,
         &:after{
-            @include transition(0.25s, ease-in-out);
+            @include transition(0.5s, ease-in-out);
         }
         &::before{
             content:"";
@@ -83,42 +83,17 @@ body{
             height: 30px;
             opacity: 0;
         }
-        //active link state
-        &.active,
+        //hover links state
         &:hover{
-            color: $yellow;
             opacity: 1;
-            h3{
-                font-size: 32px;
-                line-height: 36px;
-            }
-            span{
-                font-size: 14px;
-                line-height: 16px;
-                top: 14px;
-            }
-            &:before{
-                background: $yellow;
-                height: 3px;  
-                width: 141%;
-            }
-            &:after{
-                opacity: 1;
-                right: calc(-41% - 12px);
-            }
-           
         }
+        
     }
     //Tab content (text and images)
     .tab-content{
-        opacity: 0;
         position: absolute;
         left: calc(32% + 148px);
         top: 104px;
-        @include transition(.4s, ease-in-out);
-        &.active{
-            opacity: 1;
-        }
         figure{
             position: relative;
             &:after{
@@ -160,6 +135,30 @@ body{
                     background: $beige;
                     color: $gray;
                 }
+            }
+        }
+    }
+    &.active{
+        .tab-header{
+            color: $yellow;
+            opacity: 1;
+            h3{
+                font-size: 32px;
+                line-height: 36px;
+            }
+            span{
+                font-size: 14px;
+                line-height: 16px;
+                top: 14px;
+            }
+            &:before{
+                background: $yellow;
+                height: 3px;  
+                width: 141%;
+            }
+            &:after{
+                opacity: 1;
+                right: calc(-41% - 12px);
             }
         }
     }

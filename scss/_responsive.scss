@@ -24,11 +24,6 @@
             &:after{
                 display: none;
             }
-            &.active{
-                &:before{
-                    width: 100%;
-                }
-            }
         }
         .tab-content{
             position: relative;
@@ -36,8 +31,16 @@
             top: auto;
             height: 0;
             width: 100%;
-            &.active{
+            overflow: hidden;
+        }
+        &.active{
+            .tab-content{
                 height: auto;
+            }
+            .tab-header{
+                &:before{
+                    width: 100%;
+                }
             }
         }
     }
