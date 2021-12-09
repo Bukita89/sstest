@@ -29,13 +29,14 @@
             position: relative;
             left: auto;
             top: auto;
-            height: 0;
             width: 100%;
             overflow: hidden;
+            max-height:0;
+            @include transition(0.8s, ease-in-out);
         }
         &.active{
             .tab-content{
-                height: auto;
+                max-height: 1000px;
             }
             .tab-header{
                 &:before{

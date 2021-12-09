@@ -44,7 +44,7 @@ body{
             font-weight: 400;
             display: inline-block;
             letter-spacing: 0.05em;
-            @include transition(0.5s, ease-in-out);
+            @include transition(0.8s, ease-in-out);
         }
         span{
             display: inline-block;
@@ -55,12 +55,12 @@ body{
             font-size: 12px;
             line-height: 22px;
             letter-spacing: 0.2em;
-            @include transition(0.5s, ease-in-out);
+            @include transition(0.8s, ease-in-out);
         }
         //Arrow
         &:before,
         &:after{
-            @include transition(0.5s, ease-in-out);
+            @include transition(0.8s, ease-in-out);
         }
         &::before{
             content:"";
