@@ -31,11 +31,14 @@ $(document).ready(function(){
         }
     });
     //refresh tabs on window resize
-    $(window).resize(function(){
+    onresize = function(e) {
+        widthResized = e.target.outerWidth;
         $('.tab-item').removeClass('active');
         $('.tab-content').removeAttr('style');
-        if(windowWidth > 991) {
+        if(widthResized > 991) {
             activateFirstTab();
         }
-    });
+     };
+     window.addEventListener("resize", onresize);
+
 });
