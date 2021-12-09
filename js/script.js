@@ -4,7 +4,7 @@ $(document).ready(function(){
     function activateFirstTab(){
         firstItem = $('.tab-item').first();
         firstItem.addClass('active');
-        firstItem.find('.tab-content').css('display', 'block');
+        firstItem.find('.tab-content').css('opacity', '1');
         firstItem.siblings().removeClass('active');
         firstItem.siblings().find('.tab-content').fadeOut(800);
     }
@@ -31,14 +31,15 @@ $(document).ready(function(){
         }
     });
     //refresh tabs on window resize
-    onresize = function(e) {
-        widthResized = e.target.outerWidth;
-        $('.tab-item').removeClass('active');
-        $('.tab-content').removeAttr('style');
-        if(widthResized > 991) {
-            activateFirstTab();
-        }
-     };
-     window.addEventListener("resize", onresize);
+     $(window).resize(function(){
+        clearTimeout(window.resizedFinished);
+        window.resizedFinished = setTimeout(function(){
+            $('.tab-item').removeClass('active');
+            $('.tab-content').removeAttr('style');
+            if($(window).width() > 991) {
+                activateFirstTab();
+            }
+        }, 250);
+     });
 
 });
