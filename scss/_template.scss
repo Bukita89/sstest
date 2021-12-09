@@ -12,6 +12,7 @@ body{
     position: relative;
     padding: 104px 149px;
     width: 100%;
+    min-height: 628px;
     &:before{
         content:'';
         display: block;
@@ -103,7 +104,7 @@ body{
             }
             &:after{
                 opacity: 1;
-                right: calc(-41% - 3px);
+                right: calc(-41% - 12px);
             }
            
         }
@@ -118,6 +119,19 @@ body{
         &.active{
             opacity: 1;
         }
+        figure{
+            position: relative;
+            &:after{
+                content:"";
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: rgba(0,0,0,0.41);
+            }
+        }
         .inner{
             position: absolute;
             top: 90px;
@@ -128,6 +142,7 @@ body{
             color: $beige;
             font-size: 15px;
             line-height: 24px;
+            z-index: 10;
             .textblock{
                 margin-bottom: 69px;
             }

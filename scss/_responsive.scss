@@ -2,6 +2,15 @@
     .tab-wrapper{
         padding: 104px 50px;
     }
+    .tab-item {
+        .tab-content {
+            .inner {
+                .textblock {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
 }
 @media screen and (max-width:991px) {
     .tab-wrapper{
