@@ -1,1 +1,151 @@
-
+body{
+    font-family: $fontraleway;
+    font-weight: 500;
+}
+.container{
+    width:100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.tab-wrapper{
+    margin: 60px auto;
+    position: relative;
+    padding: 104px 149px;
+    width: 100%;
+    &:before{
+        content:'';
+        display: block;
+        width: 51.1%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(35,30,31,0.05);
+    }
+}
+.tab-item{
+    position: relative;
+    //Tab headers (links)
+    .tab-header{
+        font-family: $fontarial;
+        color: $gray;
+        opacity: 0.75;
+        text-transform: uppercase;
+        position: relative;
+        display: block;
+        padding: 37px 0 26px 0;
+        width: 32%;
+        position: relative;
+        z-index: 2;
+        h3{
+            font-size: 22px;
+            line-height: 25px;
+            margin-right: 18px;
+            font-weight: 400;
+            display: inline-block;
+            letter-spacing: 0.05em;
+            @include transition(0.25s, ease-in-out);
+        }
+        span{
+            display: inline-block;
+            position: relative;
+            top: 3px;
+            font-family: $fontraleway;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 22px;
+            letter-spacing: 0.2em;
+            @include transition(0.25s, ease-in-out);
+        }
+        //Arrow
+        &:before,
+        &:after{
+            @include transition(0.25s, ease-in-out);
+        }
+        &::before{
+            content:"";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: $gray;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        &:after{
+            content:"";
+            display: block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16.872' height='29.501' viewBox='0 0 16.872 29.501'%3E%3Cpath d='M-8880.551,10681.232l-2.121-2.121,14.751-14.751,14.75,14.751-2.121,2.121-12.629-12.63Z' transform='translate(10681.232 8882.672) rotate(90)' fill='%23d6b500'/%3E%3C/svg%3E");
+            right: 0;
+            bottom: -13px;
+            position: absolute;
+            width: 17px;
+            height: 30px;
+            opacity: 0;
+        }
+        //active link state
+        &.active,
+        &:hover{
+            color: $yellow;
+            opacity: 1;
+            h3{
+                font-size: 32px;
+                line-height: 36px;
+            }
+            span{
+                font-size: 14px;
+                line-height: 16px;
+                top: 14px;
+            }
+            &:before{
+                background: $yellow;
+                height: 3px;  
+                width: 141%;
+            }
+            &:after{
+                opacity: 1;
+                right: calc(-41% - 3px);
+            }
+           
+        }
+    }
+    //Tab content (text and images)
+    .tab-content{
+        display: none;
+        position: absolute;
+        left: calc(32% + 96px);
+        top: 0;
+        &.active{
+            display: block;
+        }
+        .inner{
+            position: absolute;
+            top: 90px;
+            left: 0;
+            right:0;
+            margin: 0 auto;
+            padding: 0 115px;
+            color: $beige;
+            font-size: 15px;
+            line-height: 24px;
+            .textblock{
+                margin-bottom: 69px;
+            }
+            a.button{
+                border: 2px solid $yellow;
+                font-family: $fontarial;
+                font-size: 16px;
+                line-height: 18px;
+                text-transform: uppercase;
+                color: $beige;
+                display: inline-block;
+                padding: 12px 16px 15px 13px;
+                &:hover,
+                &:focus{
+                    background: $beige;
+                    color: $gray;
+                }
+            }
+        }
+    }
+}

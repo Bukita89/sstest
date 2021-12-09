@@ -5,3 +5,23 @@
              -o-transition: all $time $easing;
                 transition: all $time $easing;
 }
+//Fonts
+@font-face {
+   font-family: 'Arial';
+   src: url('../fonts/ArialMT.eot');
+   src: url('../fonts/ArialMT.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ArialMT.woff2') format('woff2'),
+       url('../fonts/ArialMT.woff') format('woff'),
+       url('../fonts/ArialMT.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+$fontarial:'Arial', sans-serif;
+$fontraleway:'Raleway', sans-serif;
+
+//Colors
+$gray:#134048;
+$yellow:#D6B500;
+$beige:#F7F2DF;
