@@ -24,7 +24,6 @@ body{
     }
 }
 .tab-item{
-    position: relative;
     //Tab headers (links)
     .tab-header{
         font-family: $fontarial;
@@ -111,12 +110,13 @@ body{
     }
     //Tab content (text and images)
     .tab-content{
-        display: none;
+        opacity: 0;
         position: absolute;
-        left: calc(32% + 96px);
-        top: 0;
+        left: calc(32% + 148px);
+        top: 104px;
+        @include transition(.4s, ease-in-out);
         &.active{
-            display: block;
+            opacity: 1;
         }
         .inner{
             position: absolute;
